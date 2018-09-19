@@ -1,9 +1,2 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-application/backend/
-application/index/common.php
-application/index/config/
-application/index/model/
-application/index/view/
-config/backend/
-config/index/
