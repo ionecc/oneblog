@@ -1,6 +1,16 @@
 # oneblog
 
-#### 目录结构如下：
+#使用环境要求
+
+基于tp5。1开发，所以环境要求和tp5.1的一致，
+
+>- PHP >= 5.6.0
+>- PDO PHP Extension
+>- MBstring PHP Extension
+
+
+
+# 目录结构如下：
 
 
 
@@ -75,4 +85,64 @@
 ├─LICENSE.txt           授权说明文件
 ├─README.md             README 文件
 ├─think                 命令行入口文件
+~~~
+
+
+#开始使用
+
+## 1.建数据库
+
+~~~
+Database Name  oneblog
+Database Encoding utf-8 unicode(utf8mb4)
+Database Collation  utf8mb4_general_ci 
+~~~
+
+
+## 2.获取源码
+
+从github上下载源代码
+
+~~~
+
+https://github.com/ionecc/oneblog.git
+
+~~~
+
+## 3.使用composer安装依赖
+
+进入项目目录
+
+~~~
+
+composer install
+
+~~~
+
+## 4.生成env配置文件
+
+~~~
+
+APP_DEBUG =  true
+APP_TRACE =  true
+
+
+[DATABASE]
+TYPE     =  mysql
+HOSTNAME =  127.0.0.1
+DATABASE =  oneblog
+USERNAME =  root
+PASSWORD =  root
+HOSTPORT =  3306
+
+~~~
+
+## 5.数据迁移
+
+这里是使用了tp5的数据迁移，不是很理解的线看看官方的文档
+
+~~~
+
+
+
 ~~~
