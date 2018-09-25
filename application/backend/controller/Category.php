@@ -9,7 +9,11 @@
 namespace app\backend\controller;
 
 
-class Category
+class Category extends Base
 {
 
+    public function create()
+    {
+        return $this->fetch();
+    }
 }

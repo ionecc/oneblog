@@ -1,10 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oneblog后台管理系统</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/backend/css/base.css">
 </head>
-<body>
-$END$
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">oneblog后台管理系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="/backend"><i class="layui-icon layui-icon-home"></i></a></li>
+            <li class="layui-nav-item" id="oneblog-reload"><a href="javascript:;"><i class="layui-icon layui-icon-refresh-3"></i></a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item" lay-unselect>
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    贤心
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item">
+                    <a href="/backend"><i class="layui-icon layui-icon-home"></i> 首页</a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 文章</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">文章管理</a></dd>
+                        <dd><a href="javascript:;">文章发布</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 分类</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">分类管理</a></dd>
+                        <dd><a href="/backend/category/create">分类添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 标签</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">标签管理</a></dd>
+                        <dd><a href="javascript:;">标签添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 文件</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">文件管理</a></dd>
+                        <dd><a href="javascript:;">文件添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 导航</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">导航管理</a></dd>
+                        <dd><a href="javascript:;">导航添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 用户</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">用户管理</a></dd>
+                        <dd><a href="javascript:;">用户添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="">设置</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 连接</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">连接管理</a></dd>
+                        <dd><a href="javascript:;">连接添加</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i> 单页</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">单页管理</a></dd>
+                        <dd><a href="javascript:;">单页新增</a></dd>
+                    </dl>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+
+            <div class="layui-fluid">
+                <div class="oneblog-body">
+                    {block name="content"}{/block}
+                </div>
+
+            </div>
+
+    </div>
+
+
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script src="/static/jquery/jquery.min.js"></script>
+
+
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    function selecdednav(number,serial){
+        //layui-nav-itemed layui-this
+        $('.layui-nav-tree li').eq(number).addClass("layui-nav-itemed");
+        $('.layui-nav-tree li').eq(number).find('dd').eq(serial).addClass("layui-this");
+    }
+
+</script>
+
+{block name="script"}{/block}
+
+<script src="/static/backend/js/base.js"></script>
+
 </body>
 </html>
